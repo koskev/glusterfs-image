@@ -6,4 +6,4 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["/usr/sbin/glusterd", "-p", "/var/run/glusterd.pid"]
+ENTRYPOINT ["/usr/sbin/glusterd", "-p", "/var/run/glusterd.pid", "-N"]
