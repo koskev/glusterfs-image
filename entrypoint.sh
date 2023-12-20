@@ -11,5 +11,7 @@ id="$2"
 mountpoint="$3"
 
 mkdir -p $mountpoint
+# Remove any stale mounts
+umount $mountpoint
 
 glusterfs --debug --no-daemon --volfile-server="$server" --volfile-id=/"$id" "$mountpoint"
