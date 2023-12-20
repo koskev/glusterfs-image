@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Check if all required parameters are provided
 if [ "$#" -ne 3 ]; then
@@ -12,4 +12,4 @@ mountpoint="$3"
 
 mkdir -p $mountpoint
 
-glusterfs --no-daemon --volfile-server="$server" --volfile-id=/"$id" "$mountpoint"
+glusterfs --debug --no-daemon --volfile-server="$server" --volfile-id=/"$id" "$mountpoint"
